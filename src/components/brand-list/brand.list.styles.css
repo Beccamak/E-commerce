@@ -1,0 +1,26 @@
+.brand-list{
+    padding: 1.6rem;
+}
+.brand-list-container{
+    /* padding: 1.6rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.checkbox-item{
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    font-size: 1.6rem;
+}
+.checkbox-label::before,
+.checkbox-label::after{
+    top: 1.2rem;
+    width: 8rem;
+    height: 4rem;
+}
+.sidebar-search-bar{
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    
+}
