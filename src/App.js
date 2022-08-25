@@ -6,8 +6,22 @@ import Navigation from "./routes/Navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import FlashsalesCategory from "./routes/flashSales.category/flashSales.category.component";
 import ShopTopCategories from "./routes/shop-top-categories/shop.top.categories.component";
+import { useDispatch } from "react-redux";
+import { getCategoriesAndDocuments } from "./utils/firebase";
+import { useEffect } from "react";
+import { setCategories } from "./store/categoriesReducer/categories.action";
+import TestProductsPage from "./routes/test products page/test.products.page.component";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const categoriesGetter = async() => {
+        const categories = await getCategoriesAndDocuments();
+        dispatch(setCategories(categories))
+    }
+    categoriesGetter();
+})
   return (
     <div> 
     <Routes>
@@ -16,7 +30,7 @@ const App = () => {
       <Route path="/auth" element={<Authentication />}/>
       <Route path="/flash" element={<FlashsalesCategory />} />
       <Route path="/shop/*" element={<ShopTopCategories/>} />
-    </Route>
+      </Route>
     </Routes>
     
 

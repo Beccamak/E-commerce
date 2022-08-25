@@ -8,7 +8,7 @@
     margin-bottom: 2.8rem;
     
 }
-.normal{
+.normal, .noLinkHeader{
     background-color: #F5B216;
 }
 
@@ -16,6 +16,7 @@
     background-color: #ff1100;
     color: #efefef;
 }
+
 .time{
     font-size: 2rem;
     font-weight: 500;

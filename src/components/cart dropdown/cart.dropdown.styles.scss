@@ -1,0 +1,22 @@
+// import styled from "styled-components";
+
+// export const CartDropdownContainer = styled.div`
+//     background-color: #fff;
+//     height: 28rem;
+//     width: 4rem;
+// `;
+
+.cart-dropdown{
+    background-color: #fff;
+        height: 42.2rem;
+        width: 26rem;
+        position: absolute;
+        top: 100%;
+        border-top: 1px solid #F5b216;
+        
+        right: 5.65rem;
+}
+
+.nav-link-details{
+    // border: 1px solid red;
+}

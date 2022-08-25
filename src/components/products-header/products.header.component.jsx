@@ -6,7 +6,8 @@ const ProductsHeader = ({headerType, children, route, onClickHandler}) => {
     
         const PRODUCT_HEADER_CLASSES = {
         flashSales : "flash_sale_product_header",
-        normal: 'normal'
+        normal: 'normal',
+        noLinkHeader: 'noLinkHeader'
     }
     // const {title, additionalInfo} = productTitle;
     return(
@@ -14,7 +15,7 @@ const ProductsHeader = ({headerType, children, route, onClickHandler}) => {
             <span>{children}</span>
             {headerType==="flashSales" && <span className='time'>09:45:23</span> }
             <span></span>
-            <Link to={`/${route}`} onClick={onClickHandler}>View all</Link>
+            {headerType !=="noLinkHeader" && <Link to={`/${route}`} onClick={onClickHandler}>View all</Link>}
         </div>
     )
 }

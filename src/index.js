@@ -7,18 +7,26 @@ import { createRoot } from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
 import { UserProvider } from './contexts/user.context';
 import { DisplayDetailsProvider } from './contexts/display.details.context';
+import {CategoriesProvider} from './contexts/categories.context.jsx';
+import { Provider } from 'react-redux';
+import {store} from './store/store';
+
 
 const container = document.getElementById('root');
 const root = createRoot( container );
 root.render(
   <React.StrictMode>
+  <Provider store={store}>
   <BrowserRouter>
   <UserProvider>
+  {/*<CategoriesProvider>*/}
   <DisplayDetailsProvider>
-    <App /> 
+  <App /> 
   </DisplayDetailsProvider>
+  {/*</CategoriesProvider>*/}
   </UserProvider>
-   </BrowserRouter>
+  </BrowserRouter>
+  </Provider>
   </React.StrictMode>
 )
 // ReactDOM.render(

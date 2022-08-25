@@ -1,4 +1,4 @@
-const categories = [
+const CATEGORIES = [
   {
     MainCategory: "Home & Office",
     subCategoriesList: [
@@ -610,4 +610,4 @@ const categories = [
   },
 ];
 
-export default categories;
+export default CATEGORIES;
