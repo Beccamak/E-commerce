@@ -10,8 +10,8 @@ const ShopTopCategories = () => {
         <Routes>
             <Route index element={_index} />
             <Route path=":category" element={_element} />
-        </Routes>
-    )
+            </Routes>
+            )
 }
 
 

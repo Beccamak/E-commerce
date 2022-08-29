@@ -5,7 +5,6 @@ import TopReusableComponent from '../../components/top reusable component/top.re
 
 
 const TopCategoriesPreview = ({data}) => {
-    console.log("topcategoriespreview", data)
       return (
         <div>
         <TopReusableComponent data={data}/>

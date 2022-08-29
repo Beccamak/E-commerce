@@ -35,11 +35,8 @@ googleProvider.setCustomParameters(
 )
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation={}) => {
-    console.log("userAuth", userAuth);
     const userDocRef = doc(database, 'users', userAuth.uid);
-    console.log("userDocoRef",userDocRef);  
     const userSnapshot = await getDoc(userDocRef);
-    console.log("usesnapshot", userSnapshot.exists());
 
     if(!userSnapshot.exists()){
         const {firstName, lastName, email} = userAuth;
@@ -48,7 +45,6 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
     try {
         await setDoc(userDocRef, {firstName, lastName, email,  createdAt, ...additionalInformation});
     } catch (error) {
-        console.log(error.message);
     }
     }
     return userDocRef;
@@ -56,7 +52,6 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
 
 export const createAuthUserWithEmailAndPassword = async(email, password) => {
     if(!email || !password) return;
-    console.log("createAuthuser ", email, password);
     return createUserWithEmailAndPassword(auth, email, password);
 }
 
@@ -88,7 +83,6 @@ export const addCollectionAndDocuments = async(collectionKey, objectsToAdd) => {
         batch.set(docRef, object);
     })
     await batch.commit();
-    console.log("done");
 }
 
 export const getCategoriesAndDocuments = async() => {
@@ -97,18 +91,12 @@ export const getCategoriesAndDocuments = async() => {
     // Can also do this directly
     // const q = query(collection(database, "categories"))
     const querySnapshot = await getDocs(q);
-    console.log("querySnapshot.docs," , querySnapshot.docs);
-    querySnapshot.docs.map((docSnapshot, index) => console.log(index,"index",docSnapshot.data()));
+    // querySnapshot.docs.map((docSnapshot, index) => console.log(index,"index",docSnapshot.data()));
     const categoriesArray = querySnapshot.docs.reduce((acc, doc, index) => {
-        // console.log("snapShot", doc.data());
         const {MainCategory, subCategoriesList} = doc.data();
         acc[index] = {"MainCategory" : MainCategory, "subCategoriesList": subCategoriesList};
-        // console.log(index);
-        //  acc = doc.data()
-        // console.log("acc", acc);
         return acc;
     }, []); 
-    console.log("ff", categoriesArray);
     return categoriesArray
     
 }

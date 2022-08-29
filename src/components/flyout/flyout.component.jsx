@@ -10,7 +10,6 @@ import products from '../../THE_PRODUCTS';
 
 
 const Flyout = () => {
-    console.log("rendering");
    const {route} = useParams();
     const[isHover, setIsHover] = useState(false);
     const[categoryIsHover] = useState(false);
@@ -23,11 +22,10 @@ const Flyout = () => {
          setStyle(isHover ? {visibility: "visible"} : {});
          
     }, [isHover])
-    // categories.map((cat) => {console.log(cat)})
+    
 
     const mouseEnterHandler = (event) => {
         setCurrentCategory(event.target.innerText);
-        console.log(currentCategory);
         setIsHover(true);
         setFlyout(true);
     }
@@ -58,7 +56,6 @@ const Flyout = () => {
             route: "flash", 
             products: products
         }} />)
-        console.log("meeee", route);
     }
     
     let sub  = [];
@@ -85,10 +82,7 @@ const Flyout = () => {
                         if (sub) {
                             categoriesDivision(sub);
                         }
-                        
-                        console.log("arr", arr);
-
-// {data.filter((category)=> category.MainCategory)}
+                    
 
     return(
              <div className='categories--flyout'>

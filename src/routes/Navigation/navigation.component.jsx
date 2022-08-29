@@ -4,11 +4,21 @@ import { Fragment, useContext } from 'react';
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase';
 import CartDropdown from '../../components/cart dropdown/cart.dropdown.component';
-
+import { selectCartCount, selectIsCartOpen } from '../../store/cart reducer/cart.selector';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsCartOpen } from '../../store/cart reducer/cart.action';
 
 const Navigation = () => {
+    const dispatch = useDispatch();
     const {currentUser} = useContext(UserContext);
-    console.log("current user", currentUser);
+   const cartCount = useSelector(selectCartCount);
+   const isCartOpen = useSelector(selectIsCartOpen);
+   
+
+   const toggleIsCartOpen = () => {
+       dispatch(setIsCartOpen(!isCartOpen));
+   }
+   
     return(
         <Fragment>
         <div className="navigation">
@@ -16,10 +26,11 @@ const Navigation = () => {
             <Link className='logo' to="/">Logo</Link>
             <div className='search-container'>
                 <div className='search-bar'>
+
                 <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <span>Search products, categories and brands</span>
+                <input className='input-search' type="text" placeholder='Search products, categories and brands' />
                 </div>
                 <div className='search-text'>
                     <button className='btn-search'>search</button>
@@ -35,18 +46,18 @@ const Navigation = () => {
                     <span>Wishlist</span>
             </div>
             </Link> 
-            <Link className='nav-link cart' to="/">
+            <span className='nav-link cart' onClick={toggleIsCartOpen}>
                 <div className='nav-link-details'>
                 <div className="cart-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
-                <span className='item-count'>0</span>
+                <span className='item-count'>{cartCount}</span>
                 </div>
                 <span>C  art</span>
                
                 </div>
-            </Link> 
+            </span> 
             <Link className='nav-link' to="/">
                 <div className='nav-link-details'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -78,7 +89,7 @@ const Navigation = () => {
              
             </div>
         </div>
-        {/*<CartDropdown /> */}
+        {isCartOpen && <CartDropdown />}
         </div>
         <div className="container">
         <Outlet />

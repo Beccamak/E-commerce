@@ -37,7 +37,6 @@ const catego = [
  
 
 const onMouseEnterHandler = (event) => {
-    console.log(event);
     setCategory(event.target.innerText);
   
 };

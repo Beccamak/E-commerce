@@ -33,7 +33,6 @@ const SignInForm = () =>{
         }
     }
     const handleSubmit = async (event) => {
-        console.log(event);
         event.preventDefault();
 
         try {
@@ -48,7 +47,7 @@ const SignInForm = () =>{
                   alert('No user associated with this email');
                   break;
                 default:
-                  console.log(error)
+
                   
               }
             
@@ -64,13 +63,11 @@ const SignInForm = () =>{
         if (toggleIcon) {
             setHideOrShow("show")
             setFormFields({...formFields, type: "text"});
-            console.log(formFields);
         }else{
             setHideOrShow("hide")
             setFormFields({...formFields, type: "password"});
         }
         
-        console.log(toggleIcon);
     }
     return(
         <div className='sign-in-container'>

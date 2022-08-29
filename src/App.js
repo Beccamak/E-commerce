@@ -8,12 +8,18 @@ import FlashsalesCategory from "./routes/flashSales.category/flashSales.category
 import ShopTopCategories from "./routes/shop-top-categories/shop.top.categories.component";
 import { useDispatch } from "react-redux";
 import { getCategoriesAndDocuments } from "./utils/firebase";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { setCategories } from "./store/categoriesReducer/categories.action";
-import TestProductsPage from "./routes/test products page/test.products.page.component";
+import ProductPage from "./routes/product page/product.page.component";
+import { DisplayDetails } from "./contexts/display.details.context";
+import Checkout from "./routes/checkout/checkout.component";
+
+
+
 
 const App = () => {
   const dispatch = useDispatch();
+  const {currentProduct} = useContext(DisplayDetails);
 
   useEffect(() => {
     const categoriesGetter = async() => {
@@ -22,6 +28,7 @@ const App = () => {
     }
     categoriesGetter();
 })
+
   return (
     <div> 
     <Routes>
@@ -30,10 +37,10 @@ const App = () => {
       <Route path="/auth" element={<Authentication />}/>
       <Route path="/flash" element={<FlashsalesCategory />} />
       <Route path="/shop/*" element={<ShopTopCategories/>} />
+      {currentProduct && <Route path="/product" element={<ProductPage product={currentProduct} />}/>}
+      <Route path="/checkout" element={<Checkout/>} />
       </Route>
     </Routes>
-    
-
     </div>
   );
 };

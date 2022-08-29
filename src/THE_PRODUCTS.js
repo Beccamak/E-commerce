@@ -13,7 +13,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -30,7 +30,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -47,7 +47,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -64,7 +64,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -81,7 +81,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -98,7 +98,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     },
     {
@@ -115,7 +115,7 @@ const products = [
         order: 13,
         sold: 10,
         percentageDeecrease: 15,
-        imgUrl: "",
+        imgUrl: "images/gallery-6.jpg",
         additionalDetails: ""        
     }
 ];

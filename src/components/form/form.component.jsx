@@ -21,7 +21,7 @@ const Form = ({ header, handleSubmit, formDetails, buttonDetails}
             setType("password");
         }
         
-        console.log(toggleIcon);
+
     }
     return(
         <div>

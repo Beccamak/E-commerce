@@ -8,14 +8,11 @@ import ProductsCard from '../../components/products card/products.card.component
 
 const Category = ({data}) => {
     const {category} =  useParams();
-    console.log("category", category);
     const products = data.find((topProduct)=>  {
         
          return topProduct["name"] === category
         })
-        console.log("product", products);
-    
-   
+        
     return(
      <div>
         <h2>{products.name}</h2>
@@ -31,9 +28,6 @@ const Category = ({data}) => {
 
 
 export default Category;
-
-
-
 
 // const topCategoriesProducts = [
 //     {   
@@ -224,3 +218,6 @@ export default Category;
 
 
 // export default Category;
+
+
+
