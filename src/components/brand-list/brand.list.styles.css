@@ -24,3 +24,10 @@
     margin-bottom: 2rem;
     
 }
+input[type="checkbox"]::before{
+    content: "";
+    background-color: #F5B216;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+

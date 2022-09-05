@@ -1,6 +1,6 @@
 import './flashSales.category.styles.css';
-import ProductsPage from '../../components/products page/products.page.component';
 import { Children } from 'react';
+import ProductsPage from '../products page/products.page.component';
 
 
 const flashSales = [
@@ -53,9 +53,6 @@ const flashSales = [
 const FlashsalesCategory = () => {
     return(
         <div className='flash-sales-category'>
-        <div>Directory</div>
-        <div>Image</div>
-        <div>categories card</div>
         <ProductsPage productsDetails={{
             children: "Flash Sales",
             headerType: "flashSales",

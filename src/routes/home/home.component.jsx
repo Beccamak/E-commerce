@@ -6,10 +6,15 @@ import TopBrands from '../../components/top brands/top.brands.component';
 import Footer from '../../components/footer/footer.component';
 import OutstandingSales from '../../components/outstanding sales/outstanding.sales.components';
 import LuckyGuess from '../../components/lucky guess/lucky.guess.component';
+import {motion} from "framer-motion";
+
 
 const Home = () => {
+  
     return(
-         <div>
+         <motion.div initial={{width: 0}} animate={{width: "100%"}} transition={{duration: 0.9}} exit={{width: window.innerWidth}}>    
+        
+
          <MainDisplay />
          <FlashSales />
           <TopCategories />
@@ -18,7 +23,7 @@ const Home = () => {
            <OutstandingSales />
            <Footer />
           
-         </div>
+         </motion.div>
     )
 }
 

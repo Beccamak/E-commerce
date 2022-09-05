@@ -1,9 +1,8 @@
 import './sidebar.styles.css';
 import CategoriesList from '../categories-list/categories-list.component';
 import BrandList from '../brand-list/brand-list.component';
-import ProductCard from '../productCard/card.component';
-import ProductsHeader from '../products-header/products.header.component';
-import ProductsCard from '../products card/products.card.component';
+import PriceSlider from '../price slider/price.slider.component';
+
 const Sidebar = () => {
     return(
         <div className='sidebar-container'>
@@ -17,7 +16,7 @@ const Sidebar = () => {
             </div>
             <div className='sidebar-section'>
             <h2 className='sidebar-header' >Price</h2>
-            <div>Price Slider</div>
+            <PriceSlider />
             </div>
             <div className='sidebar-section'>
             <h2 className='sidebar-header' >Discount Percentage</h2>

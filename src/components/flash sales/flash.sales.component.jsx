@@ -1,6 +1,6 @@
 import './flash.sales.styles.css';
-import ProductsHeader from '../../components/products-header/products.header.component';
-import ProductCard from '../../components/productCard/card.component.jsx'
+import ShortDeals from '../short time deals/deals.component';
+
 const flashSales = [
     {
         id: 1,
@@ -45,29 +45,76 @@ const flashSales = [
         price: "350",
         imgUrl: "images/gallery-6.jpg",
         percentageDecrease: "4"
+    },
+    {   
+        id: 7,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
+    },
+    {   
+        id: 8,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
+    },
+    {   
+        id: 9,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
+    },
+    {   
+        id: 10,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
+    },
+    {   
+        id: 11,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
+    },
+    {   
+        id: 12,
+        name: "Leather watch",
+        price: "350",
+        imgUrl: "images/gallery-6.jpg",
+        percentageDecrease: "4"
     }
 
 ]
 const FlashSales = () => {
     return(
-        <div className='flash-sales-section'>
-        <ProductsHeader children="Flash Sales" headerType="flashSales" route="flash"/>
-        <div className='flash-sales-products'>
-        {
-            flashSales.filter((_, index) => {
-                return index < 6
-            }).map((flashSaleProduct) => {
-                return <ProductCard key={flashSaleProduct.id} product={flashSaleProduct}/>
-             })
-        }
-        </div>
-       
-        </div>
-    )
+    <ShortDeals children="Flash Sales" headerType="flashSales" route="flash" products={flashSales} />
+
+)
 }
 
 export default FlashSales;
-//  productprice={productprice}
 
 
-// 0 .5rem 1rem rgba(0,0,0,.1);
+//before bringing in short deals
+// const FlashSales = () => {
+//     return(
+//         <div className='flash-sales-section'>
+//         <ProductsHeader children="Flash Sales" headerType="flashSales" route="flash"/>
+//         <div className='flash-sales-products'>
+//         {
+//             flashSales.filter((_, index) => {
+//                 return index < 6
+//             }).map((flashSaleProduct) => {
+//                 return <ProductCard key={flashSaleProduct.id} product={flashSaleProduct}/>
+//              })
+//         }
+//         </div>
+       
+//         </div>
+//     )
+// }

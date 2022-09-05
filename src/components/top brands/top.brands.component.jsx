@@ -5,6 +5,7 @@ import TopBrandsPreview from '../../routes/top brands preview/top.brands.preview
 import { useContext } from 'react';
 import { DisplayDetails } from '../../contexts/display.details.context';
 import Category from '../../routes/category/category.component';
+import ShortDeals from '../short time deals/deals.component';
 
 const TopBrands = () => {
     const topBrands = [
@@ -176,24 +177,28 @@ const TopBrands = () => {
     }
 
     return(
-        <div className='top-brands-container'>
-            <ProductsHeader children="Top Brands" headerType='normal' route="shop" onClickHandler={onViewAllHandler}/>
-            <div className='flash-sales-products'>
-            {
-                topBrands.filter((_, index) => {
-                    return index < 6
-                }).map((topBrandProduct) => {
-                    return <ProductCard key={topBrandProduct.id} product={topBrandProduct}/>
-                 })
-            }
-            </div>
-        </div>
+        <ShortDeals children="Top Brands" headerType='normal' route="shop" onClickHandler={onViewAllHandler} products={topBrands} />
+        
     )
 }
 
 
 
 export default TopBrands;
+
+
+// <div className='top-brands-container'>
+//             <ProductsHeader children="Top Brands" headerType='normal' route="shop" onClickHandler={onViewAllHandler}/>
+//             <div className='flash-sales-products'>
+//             {
+//                 topBrands.filter((_, index) => {
+//                     return index < 6
+//                 }).map((topBrandProduct) => {
+//                     return <ProductCard key={topBrandProduct.id} product={topBrandProduct}/>
+//                  })
+//             }
+//             </div>
+//         </div>
 
 
 // {topBrands.map((topBrand) => {

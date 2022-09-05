@@ -6,32 +6,34 @@ import Navigation from "./routes/Navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
 import FlashsalesCategory from "./routes/flashSales.category/flashSales.category.component";
 import ShopTopCategories from "./routes/shop-top-categories/shop.top.categories.component";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCategoriesAndDocuments } from "./utils/firebase";
 import { useEffect, useContext } from "react";
-import { setCategories } from "./store/categoriesReducer/categories.action";
+import { fetchCategoriesOnAppLoad, setCategories } from "./store/categoriesReducer/categories.action";
 import ProductPage from "./routes/product page/product.page.component";
 import { DisplayDetails } from "./contexts/display.details.context";
 import Checkout from "./routes/checkout/checkout.component";
-
-
-
+import { selectIsLoading } from "./store/categoriesReducer/categories.selector";
+import Spinner from "./components/spinner/spinner.component";
+import { useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const dispatch = useDispatch();
   const {currentProduct} = useContext(DisplayDetails);
+  const isLoading = useSelector(selectIsLoading);
+  const location = useLocation();
+  console.log("location", location);
 
   useEffect(() => {
-    const categoriesGetter = async() => {
-        const categories = await getCategoriesAndDocuments();
-        dispatch(setCategories(categories))
-    }
-    categoriesGetter();
-})
+    dispatch(fetchCategoriesOnAppLoad());
+}, [])
 
   return (
+    isLoading? <Spinner /> : 
     <div> 
-    <Routes>
+    <AnimatePresence>
+    <Routes location={location}>
     <Route path="/" element={<Navigation/>}>
       <Route index element={<Home/>}/>
       <Route path="/auth" element={<Authentication />}/>
@@ -41,6 +43,7 @@ const App = () => {
       <Route path="/checkout" element={<Checkout/>} />
       </Route>
     </Routes>
+    </AnimatePresence>
     </div>
   );
 };

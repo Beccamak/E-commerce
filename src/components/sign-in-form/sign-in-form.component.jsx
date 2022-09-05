@@ -89,7 +89,7 @@ const SignInForm = () =>{
             <button className='btn log-in-facebook'>
             <i className='bx bxl-facebook facebook-icon'></i>
             Login with Facebook</button>
-            <button className='btn log-in-google'>
+            <button className='btn log-in-google' onClick={signInWithGoogle}>
             <i className='bx bxl-google google-icon'></i>
             <span className='login-text'>Login with Google</span>
             </button>

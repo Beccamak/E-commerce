@@ -4,8 +4,6 @@ const selectCategoriesReducer = (state) => state.categories;
 
 
 
-
-
 const selectCategories = createSelector(
     [selectCategoriesReducer], (categoriesReducerSlice) => categoriesReducerSlice.categories
     
@@ -14,4 +12,8 @@ const selectCategories = createSelector(
 
 export const selectCategoriesArray = createSelector(
     [selectCategories], (categories) => categories
+)
+
+export const selectIsLoading = createSelector(
+    [selectCategoriesReducer], (categoriesReducerSlice) => categoriesReducerSlice.isLoading
 )

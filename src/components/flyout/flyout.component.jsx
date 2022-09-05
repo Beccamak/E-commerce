@@ -5,8 +5,8 @@ import { DisplayDetails } from '../../contexts/display.details.context';
 import { useSelector } from 'react-redux/es/exports';
 import { selectCategoriesArray } from '../../store/categoriesReducer/categories.selector';
 import { useParams } from 'react-router-dom';
-import TestProductsPage from '../../routes/test products page/test.products.page.component';
 import products from '../../THE_PRODUCTS';
+import ProductsPage from '../../routes/products page/products.page.component';
 
 
 const Flyout = () => {
@@ -50,7 +50,7 @@ const Flyout = () => {
 
     const onCategoryHandler = (event) => {
         const categoryTitle = event.target.innerText;
-        set_index(<TestProductsPage productsDetails={{
+        set_index(<ProductsPage productsDetails={{
             children: categoryTitle,
             headerType: "noLinkHeader",
             route: "flash", 

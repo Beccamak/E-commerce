@@ -6,8 +6,9 @@ const BUTTON_TYPES = {
 }
 
 const Button = ({buttonType, children, onClickHandler}) => {
+    <button className='butt btn2'>Hover me</button>
     return(
-        <button className={` ${BUTTON_TYPES[buttonType]}`} onClick={onClickHandler}>{children}</button>
+        <button className={` Button button ${BUTTON_TYPES[buttonType]}`} onClick={onClickHandler}>{children}</button>
     )
 }
 
