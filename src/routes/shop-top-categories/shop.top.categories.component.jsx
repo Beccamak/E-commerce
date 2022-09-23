@@ -1,19 +1,18 @@
-import { useContext } from "react"
 import { Routes, Route } from "react-router-dom"
-import { DisplayDetails } from "../../contexts/display.details.context";
-
+import TopCategoriesPreview from "../top categories preview/top.categories.preview.component";
+import TopCategory from "../../components/top Category/top.category.component";
 
 const ShopTopCategories = () => {
-    const {_index, _element} = useContext(DisplayDetails);
 
     return(
         <Routes>
-            <Route index element={_index} />
-            <Route path=":category" element={_element} />
+            <Route index element={<TopCategoriesPreview />} />
+            <Route path=":topCategory" element={<TopCategory />} />
             </Routes>
             )
-}
-
-
-
-export default ShopTopCategories;
+        }
+        
+        
+        
+        export default ShopTopCategories;
+        // <Route path=":category" element={TopCategory} />

@@ -1,43 +1,16 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { selectMainCategories } from '../../store/categoriesReducer/categories.selector';
+import { setCurrentCategory } from '../../store/products reducer/products.action';
 import './categories.list.styles.css';
-import { useState } from 'react';
-import { useContext } from 'react';
-import { DisplayDetails } from '../../contexts/display.details.context';
-
 
 const CategoriesList = () => {
-    const categories = ["Home & Office",
-    "Computers & Accessories", "Kids & Toys",
-    "Phones & Tablets", "Other Categories", "Clothings",
-    "Electronics","Kitchen", "Featured Brands"
-]
-const catego = [
-    {
-        category: "Home & Office",
-        subCategories: [
-            "Arts, Crafts & Sewing",
-            "Home & Sewing",
-            "Home & Office Furniture", 
-            "Large Appliances & Home Improvement",
-            "Office Products"
-        ]
-    },
-    {
-        category: "Home & Office",
-        subCategories: [
-            "Arts, Crafts & Sewing",
-            "Home & Sewing",
-            "Home & Office Furniture", 
-            "Large Appliances & Home Improvement",
-            "Office Products"
-        ]
-    }
-]
-    const {setCategory} = useContext(DisplayDetails);
+    const mainCategories = useSelector(selectMainCategories);
+    const dispatch = useDispatch();
     
  
 
 const onMouseEnterHandler = (event) => {
-    setCategory(event.target.innerText);
+    dispatch(setCurrentCategory(event.target.innerText));
   
 };
 
@@ -45,7 +18,7 @@ const onMouseLeaveHandler = () => {return};
     return(
             <div className="categories-container">
                 <ul className="categories-list">
-                {categories.map((category) => {
+                {mainCategories.map((category) => {
                     return <li className="category" key={category} onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>{category}</li>
                 })}
                 </ul>

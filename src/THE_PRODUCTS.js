@@ -1,122 +1,386 @@
 const products = [
-    {
-        id: 1,
-        name: "Smart TV with led",
-        price: 500000,
-        avg_product_rating: 4,
-        num_of_raters: 20,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+  {
+    id: 1,
+    name: "Smart Tyx with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
     },
-    {
-        id: 2,
-        name: "Full flash TV",
-        price: 1300000,
-        avg_product_rating: 4,
-        num_of_raters: 10,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specificationss: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        " ehhh Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
     },
-    {
-        id: 3,
-        name: "Samsung TV",
-        price: 400000,
-        avg_product_rating: 4,
-        num_of_raters: 140,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "Samsung",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+    additionalDetails: {
+      flashSales: false,
+      percentageDecrease: "21",
     },
-    {
-        id: 4,
-        name: "Full flash led light",
-        price: 400000,
-        avg_product_rating: 4,
-        num_of_raters: 140,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
     },
-    {
-        id: 5,
-        name: "Full flash led light",
-        price: 400000,
-        avg_product_rating: 4,
-        num_of_raters: 140,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+  },
+  {
+    id: 2,
+    name: "Smart TV with led",
+    price: 200000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
     },
-    {
-        id: 6,
-        name: "Full flash led light",
-        price: 400000,
-        avg_product_rating: 4,
-        num_of_raters: 140,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 5,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
     },
-    {
-        id: 7,
-        name: "Full flash led light",
-        price: 400000,
-        avg_product_rating: 4,
-        num_of_raters: 140,
-        MainCategory:"Electronics",
-        category: "Television & Video",
-        subCategory: "Televisions",
-        brand: "LED",
-        size: "",
-        order: 13,
-        sold: 10,
-        percentageDeecrease: 15,
-        imgUrl: "images/gallery-6.jpg",
-        additionalDetails: ""        
-    }
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
+  {
+    id: 3,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 4,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
+  {
+    id: 4,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
+  {
+    id: 5,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
+  {
+    id: 6,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
+  {
+    id: 7,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Computer",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "Samsung",
+      topBrand: true,
+    },
+  },
+  {
+    id: 8,
+    name: "Smart TV with led",
+    price: 500000,
+    quantity: 58,
+    imgUrl: "images/gallery-6.jpg",
+    categoryDetails: {
+      MainCategory: "Electronics",
+      subCategory: "Television & Video",
+      category: "Televisions",
+      topCategory: true,
+    },
+    productDetails: {
+      sku: "21Y7FG08",
+      rating: 140,
+      stars: 3,
+      description:{
+        description: "THe tv is so good that upu can use for the production of a movie in your house oh yeah! yoh read that right",
+        features: [
+          "[Polyester] Durable and anti-wrinkle thigh high socks. It is not easy to break.",
+"[Elasticity] knee socks have high elasticity and elastic resilience.",
+"[Soft] soft and comfortable, good stretch ability.",
+"[Thigh socks] flexible, comfortable and stylish.",
+"[Comfortable toes] good stability stocking, the fabric is not easy to slip, and the toes are not tight to avoid pain."      
+        ]
+      },
+      specifications: [
+        "24 inches",
+        "curved eeeeeeeeeeeeeeee edger right",
+        "bright screen",
+      ],
+      delivery: [
+        "Buy now and get it delivered in few days",
+        "Express delivery",
+        "Very affordable"
+      ],
+
+      colors: ["#FFFFFF", "#000000", "#FB5216"],
+    },
+    additionalDetails: {
+      flashSales: true,
+      percentageDecrease: "21",
+    },
+    brandDetails: {
+      brandName: "LED",
+      topBrand: true,
+    },
+  },
 ];
 export default products;

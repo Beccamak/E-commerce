@@ -7,14 +7,15 @@ import Footer from '../../components/footer/footer.component';
 import OutstandingSales from '../../components/outstanding sales/outstanding.sales.components';
 import LuckyGuess from '../../components/lucky guess/lucky.guess.component';
 import {motion} from "framer-motion";
+import A from '../../components/a/a';
 
 
 const Home = () => {
   
     return(
          <motion.div initial={{width: 0}} animate={{width: "100%"}} transition={{duration: 0.9}} exit={{width: window.innerWidth}}>    
-        
-
+         <A />
+         
          <MainDisplay />
          <FlashSales />
           <TopCategories />

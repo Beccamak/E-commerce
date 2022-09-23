@@ -1,24 +1,43 @@
 import './navigation.styles.css';
-import { Link, Outlet } from 'react-router-dom';
-import { Fragment, useContext } from 'react';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Fragment, useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../../utils/firebase';
 import CartDropdown from '../../components/cart dropdown/cart.dropdown.component';
 import { selectCartCount, selectIsCartOpen } from '../../store/cart reducer/cart.selector';
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsCartOpen } from '../../store/cart reducer/cart.action';
+import { selectSearchString } from '../../store/products reducer/products.selector';
+import { setSearchString } from '../../store/products reducer/products.action';
+import useMountAndUnmountTransition from '../../components/transition hook/use.transition.component';
 
 const Navigation = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {currentUser} = useContext(UserContext);
    const cartCount = useSelector(selectCartCount);
    const isCartOpen = useSelector(selectIsCartOpen);
-   
+   const searchString = useSelector(selectSearchString);
+   const hasTransitionedIn = useMountAndUnmountTransition(isCartOpen, 1000);
 
+   const onSearchChangeHandler = (event) => {
+    const searchStringValue = event.target.value.toLocaleLowerCase();
+    dispatch(setSearchString(searchStringValue));
+   }
+   const onSearchClickHandler = () => {
+        navigate("/all-products");
+   }
+ 
    const toggleIsCartOpen = () => {
        dispatch(setIsCartOpen(!isCartOpen));
    }
-   
+   useEffect(()=> {
+    if(isCartOpen){
+        document.body.style.overflowY = 'hidden'
+    }else{
+        document.body.style.overflowY = 'scroll'
+    }
+   }, [isCartOpen])
     return(
         <Fragment>
         <div className="navigation">
@@ -30,10 +49,10 @@ const Navigation = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
-                <input className='input-search' type="text" placeholder='Search products, categories and brands' />
+                <input className='input-search' type="text" placeholder='Search products, categories and brands' value={searchString} onChange={onSearchChangeHandler}/>
                 </div>
                 <div className='search-text'>
-                    <button className='btn-search'>search</button>
+                    <button className='btn-search' onClick={onSearchClickHandler}>Search</button>
                 </div>
             </div>
             <div className='nav-links'>
@@ -89,7 +108,7 @@ const Navigation = () => {
              
             </div>
         </div>
-        {isCartOpen && <CartDropdown />}
+        {(hasTransitionedIn || isCartOpen) && <CartDropdown /> }
         </div>
         <div className="container">
         <Outlet />

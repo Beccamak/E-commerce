@@ -7,19 +7,33 @@
 // `;
 
 .cart-dropdown{
-    background-color: #fff;
-        height: 42.2rem;
-        width: 26rem;
+        background-color: #fff;
+        height: 100vh;
+        width: 32rem;
         position: absolute;
         top: 100%;
         border-top: 1px solid #F5b216;
-        
-        right: 5.65rem;
-        overflow: scroll;
+        right: 0;
+        overflow: hidden;
         z-index: 100;
-    
+        opacity: 0;
+       transform: translateX(100%);
+       transition: opacity 1s ease, transform 1s ease;
+        .cart-empty{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.8rem;
+        letter-spacing: 0.5rem;
+
 }
 
-.nav-link-details{
-    // border: 1px solid red;
+
+
+}
+.cart-in.cart-visible{
+    opacity: 1;
+    transform: translateX(0);
 }

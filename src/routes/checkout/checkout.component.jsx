@@ -1,36 +1,44 @@
-import { useContext } from 'react';
-import Button from '../../components/button/button.component';
-import { DisplayDetails } from '../../contexts/display.details.context';
-import './checkout.styles.css';
-import { addItemToCart,  removeItemFromCart, clearItemFromCart} from '../../store/cart reducer/cart.action';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCartItems } from '../../store/cart reducer/cart.selector';
+import './checkout.styles.scss';
+import { useSelector } from 'react-redux';
+import { selectCartItems, selectCartTotal } from '../../store/cart reducer/cart.selector';
+import CheckoutItem from '../../components/checkout-item/checkout.item.component';
 
 const Checkout = () => {
-    const dispatch = useDispatch();
-    const {currentProduct} = useContext(DisplayDetails);
     const cartItems = useSelector(selectCartItems);
+    const cartTotal = useSelector(selectCartTotal);
 
-    const addItemHandler = () => dispatch(addItemToCart(cartItems, currentProduct));
-    const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, currentProduct));
-    const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, currentProduct));
-
-    const {imgUrl, price, name, quantity} = currentProduct;
     return(
-        <div>
-        Checkout Page
-        <Button children="X" onClickHandler={clearItemHandler}/>
-        <Button children="-"  onClickHandler={removeItemHandler}/>
-        <Button children="+"  onClickHandler={addItemHandler}/>
-        <img src={imgUrl} />
-        <span>{name}</span>
-        <span>{price}</span>
-        <span>{quantity}</span>
-
+        <div className='checkout-container'>
+        <div className='checkout-header'>
+            <div className='header-block'>
+                <span>Product</span>
+            </div>
+            <div className='header-block'>
+                <span>Description</span>
+            </div>
+            <div className='header-block'>
+                <span>Quantity</span>    
+            </div>
+            <div className='header-block'>
+                <span>Price</span>
+            </div>
+            <div className='header-block'>
+                <span>Remove</span>
+            </div>
         </div>
+          {
+            cartItems.map((cartItem) => {
+                return <CheckoutItem key={cartItem.id} cartItem={cartItem}/>
+                } )
+            }
+            <span className='total'>Total: ${cartTotal}</span>
+        </div>
+
     )
 }
 
 
 
 export default Checkout;
+
+

@@ -17,6 +17,9 @@ import { selectIsLoading } from "./store/categoriesReducer/categories.selector";
 import Spinner from "./components/spinner/spinner.component";
 import { useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import ShopTopBrands from "./routes/shop-top-brands/shop.top.brands.component";
+import Shop from "./routes/shop/shop.component";
+import AllProducts from "./routes/all products/all.products.component";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,6 +27,7 @@ const App = () => {
   const isLoading = useSelector(selectIsLoading);
   const location = useLocation();
   console.log("location", location);
+
 
   useEffect(() => {
     dispatch(fetchCategoriesOnAppLoad());
@@ -37,8 +41,11 @@ const App = () => {
     <Route path="/" element={<Navigation/>}>
       <Route index element={<Home/>}/>
       <Route path="/auth" element={<Authentication />}/>
+      <Route path="/shop" element={<Shop />}/>
+      <Route path="/all-products" element={<AllProducts />} />
       <Route path="/flash" element={<FlashsalesCategory />} />
-      <Route path="/shop/*" element={<ShopTopCategories/>} />
+      <Route path="/shop-tc/*" element={<ShopTopCategories/>} />
+      <Route path="/shop-tb/*" element={<ShopTopBrands/>} />
       {currentProduct && <Route path="/product" element={<ProductPage product={currentProduct} />}/>}
       <Route path="/checkout" element={<Checkout/>} />
       </Route>

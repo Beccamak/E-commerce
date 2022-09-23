@@ -45,7 +45,7 @@ First Buttonon style
     text-transform: uppercase;
     border: none;
     padding: 1.2rem 2rem;
-    min-width: 200px;
+    min-width: 120px;
     width: 100%;
     cursor: pointer;
     transition: color .45s cubic-bezier(.785,.135,.15,.86),border .45s cubic-bezier(.785,.135,.15,.86);

@@ -7,11 +7,17 @@
     /* padding: 0 0.8rem; */
     transition: all 0.3s linear;
     width: 19rem;
+    /* overflow: hidden; */
+   
 }
 .product-card-container:hover{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
     /* transform: scale(1.1); */
     /* overflow: hidden; */
+}
+.product-card-container:hover img{
+/* transform: scale(1.1); 
+    overflow: hidden; */
 }
 .product-image{
     width: 100%;
@@ -57,4 +63,10 @@ img{
     font-size: 1.8rem;
     font-weight: 500;
     
+}
+.card-add-to-cart{
+   /* width: 100%;
+   transform: translateX(15px);
+  display: none;
+  transition: display 1s ease transform 1s ease; */
 }

@@ -1,11 +1,14 @@
-import './brand.list.styles.css';
+import './brand.list.styles.scss';
 import { Link } from 'react-router-dom';
 
+
 const brandList = [
+    "Samsung", "Apple", "Xiaomi", "Lumin", "Nestle", "Adidas",
     "Samsung", "Apple", "Xiaomi", "Lumin", "Nestle", "Adidas"
 ]
 
  const BrandList = () => {
+    
     
     return(
         <div className='brand-list'>
@@ -18,9 +21,9 @@ const brandList = [
         <div className='brand-list-container'>
         {
             brandList.map((brand) => {
-                return <div className='checkbox-item'>
+                return <div className='checkbox-item' id={brand}>
                 <input type="checkbox" className="checkbox-input"/>
-                <label className='checkbox-label'>
+                <label className='checkbox-label' for={brand}>
                 <Link to="/">{brand}</Link></label>
                 </div>
             })

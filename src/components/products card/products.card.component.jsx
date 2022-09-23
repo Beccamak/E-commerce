@@ -1,6 +1,7 @@
 import './products.card.styles.css';
 import ProductsHeader from '../products-header/products.header.component';
 import ProductCard from '../productCard/card.component';
+
 const ProductsCard = ({children,
     headerType,
     route,

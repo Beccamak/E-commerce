@@ -1,12 +1,5 @@
 import './top.brands.styles.css';
 import ProductsHeader from '../products-header/products.header.component';
-import ProductCard from '../productCard/card.component';
-import TopBrandsPreview from '../../routes/top brands preview/top.brands.preview.component';
-import { useContext } from 'react';
-import { DisplayDetails } from '../../contexts/display.details.context';
-import Category from '../../routes/category/category.component';
-import ShortDeals from '../short time deals/deals.component';
-
 const TopBrands = () => {
     const topBrands = [
         {   
@@ -170,14 +163,19 @@ const TopBrands = () => {
         }
         
     ]
-    const {set_index, set_element} = useContext(DisplayDetails);
-    const onViewAllHandler = () => {
-        set_index(<TopBrandsPreview data={topBrands}/>)
-        set_element(<Category data={topBrands}/>)
-    }
 
     return(
-        <ShortDeals children="Top Brands" headerType='normal' route="shop" onClickHandler={onViewAllHandler} products={topBrands} />
+        <div className='top-brands'>
+        <ProductsHeader children='Top Brands' headerType="normal" route="shop-tb"/>
+
+        <div className='top-brands-container'>
+            <div className='top-brand'>1</div>
+            <div className='top-brand'>1</div>
+            <div className='top-brand'>1</div>
+            <div className='top-brand'>1</div>
+            <div className='top-brand'>1</div>
+        </div>
+        </div>
         
     )
 }
