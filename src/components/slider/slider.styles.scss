@@ -1,7 +1,7 @@
 
     .carousel-slider{
         //    background-color: yellow;
-            width: 75%;
+            
             overflow: hidden;
             // font-size: 28.8rem;
             position: relative;
@@ -69,4 +69,13 @@
                 }
             }
         }
-       
+    
+
+ .big{
+    width: 75%;
+}
+
+.small{
+    width: 25%;
+
+}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Timer from '../timer/timer.component';
 import './a.css';
 
 const useMountTransition = (isMounted, unMountDelay) => {
@@ -30,6 +31,7 @@ const A = () => {
     }
     return(
         <div>
+      
         <button onClick={onMountHandler}>{`${isMounted? 'Hide': 'Show'} Element`}</button>
         <div className='content'>
         {( hasTransitionedIn || isMounted )&& <div className={`card  ${hasTransitionedIn && 'in'} ${isMounted && 'visible'}`}>Card COntent</div>

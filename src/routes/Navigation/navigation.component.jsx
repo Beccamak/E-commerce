@@ -10,6 +10,7 @@ import { setIsCartOpen } from '../../store/cart reducer/cart.action';
 import { selectSearchString } from '../../store/products reducer/products.selector';
 import { setSearchString } from '../../store/products reducer/products.action';
 import useMountAndUnmountTransition from '../../components/transition hook/use.transition.component';
+import Button from '../../components/button/button.component';
 
 const Navigation = () => {
     const dispatch = useDispatch();
@@ -44,15 +45,15 @@ const Navigation = () => {
         <div className="nav-container container">
             <Link className='logo' to="/">Logo</Link>
             <div className='search-container'>
-                <div className='search-bar'>
+               
 
-                <svg xmlns="http://www.w3.org/2000/svg" className="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                <input className='input-search' type="text" placeholder='Search products, categories and brands' value={searchString} onChange={onSearchChangeHandler}/>
-                </div>
+            <input className='input-search' type="text" placeholder='Search products, categories and brands' value={searchString} onChange={onSearchChangeHandler}/>
+            <svg xmlns="http://www.w3.org/2000/svg" className="search-icon nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
                 <div className='search-text'>
-                    <button className='btn-search' onClick={onSearchClickHandler}>Search</button>
+                <Button buttonType="filled" children="search" onClickHandler={onSearchClickHandler} />
+                    
                 </div>
             </div>
             <div className='nav-links'>

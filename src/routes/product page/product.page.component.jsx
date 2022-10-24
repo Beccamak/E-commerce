@@ -5,7 +5,6 @@ import { selectCartItems } from '../../store/cart reducer/cart.selector';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addItemToCart, removeItemFromCart} from '../../store/cart reducer/cart.action';
-import { useState } from 'react';
 import { useRef } from 'react';
 
 const ProductPage = ({product}) => {
@@ -46,7 +45,7 @@ const ProductPage = ({product}) => {
            </div>
            <div className='product-info'>
                <h2 className='product-info-name'>{name}</h2>
-               <p>Brand: {brandName}</p>
+               <p className='brand-name'>Brand: {brandName}</p>
                <p className='sku'>SKU: SKKER-345-TRE</p>
                <div className='ratings'>
                <div >
@@ -66,7 +65,7 @@ const ProductPage = ({product}) => {
                <div className='colors'>
                {colors.map((color) => <div className='color' style={{backgroundColor: `${color}`}}></div>)}
                </div>
-                <p>{description}</p>
+                <p className='description'>{description}</p>
 {/*
                <div className='qnty-selector'>
                <span className='qnty-selector-btn'>-</span>
@@ -81,26 +80,26 @@ const ProductPage = ({product}) => {
                </div>
            </div>
        </div>
-
-
        <div className='product-details-bar'>
-        {
-           details.map((detail, index) => {
-                return <div ref = {(element) => {return accordionRefs.current[index] = element;}} className='bar-itm'>
-                            <p className='number'>0{index + 1}</p>
-                            <p className='text'>{Object.keys(detail)}</p>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="bar-icon w-6 h-6" onClick={() => onIconClick(index)}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
-                        <div className='hidden-box'>
-                        <ul>
-                        {detail[(Object.keys(detail))].map((feature) => <li>{feature}</li>)}
-                        </ul>
-                        </div>
-        </div>
-            })
-        }
+       {
+          details.map((detail, index) => {
+               return <div ref = {(element) => {return accordionRefs.current[index] = element;}} className='bar-itm'>
+                           <p className='number'>0{index + 1}</p>
+                           <p className='text'>{Object.keys(detail)}</p>
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="bar-icon w-6 h-6" onClick={() => onIconClick(index)}>
+                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                       </svg>
+                       <div className='hidden-box'>
+                       <ul>
+                       {detail[(Object.keys(detail))].map((feature) => <li>{feature}</li>)}
+                       </ul>
+                       </div>
        </div>
+           })
+       }
+      </div>
+
+    
        </div>
 
         )

@@ -60,6 +60,7 @@ First Buttonon style
     line-height: normal;
     border-radius: 6px;
     z-index: 5;
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
     
 
 }
@@ -103,3 +104,7 @@ First Buttonon style
     transition: transform .45s cubic-bezier(.785,.135,.15,.86);
 }
 
+.fillCard:hover{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

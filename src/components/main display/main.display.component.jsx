@@ -11,14 +11,10 @@ const MainDisplay = () => {
     return(
          <div className='display-cards'>  
            <Flyout />
-
-           {!flyout? <Slider /> : <div className='small-carousel-slider'>
-        
-   </div>
-    }
            </div>
-            )
-        }
-        
-        
-export default MainDisplay;
+           )
+          }
+          
+          
+          export default MainDisplay;
+          // {!flyout? <Slider sliderType="big"/> :<Slider sliderType="small"/>}

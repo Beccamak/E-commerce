@@ -26,13 +26,10 @@
   transition: color 10000s ease-in-out;
   margin-bottom: 0.4rem;
 }
-.sku {
-  margin-bottom: 0.4rem;
-  font-size: 1.5rem;
-}
+
 .product-info-price {
   font-size: 1.8rem;
-  margin-bottom: 2.8rem;
+  padding: 2.8rem 0;
 }
 
 .qnty-selector {
@@ -66,21 +63,23 @@
 .ratings{
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  font-size: 1.2rem;
+  // gap: 1.4rem;
 
 }
 .colors{
   display: flex;
   gap: 1.2rem;
-
+  margin-bottom: 1.4rem;
+  
+  
 }
 .color{
   width: 2rem;
   height: 2rem;
-  /* background-color: red; */
   border-radius: 50%;
-
 }
+
 .add {
   margin: none;
   margin-bottom: 4rem;
@@ -98,6 +97,7 @@
 }
 
 .bar-itm {
+  background-color: #ffffff;
   font-size: 1.8rem;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
   padding: 2.4rem;
@@ -109,14 +109,17 @@
   align-items: center;
 
 }
+.bar-itm:hover{
+  background: none;
+}
 .bar-icon{
   width: 2.4rem;
   height: 2.4rem;
-  stroke: #F5B216;
+  // stroke: #F5B216;
   cursor: pointer;
 }
 .number{
-  color: #ced4da;
+  
 }
 .number, .text{
   font-size: 1.8rem;
@@ -133,7 +136,7 @@
 }
 
 .hidden-box ul{
- color: #868e96;
+//  color: #868e96;
  margin-left: 2.4rem;
  display: flex;
  flex-direction: column;
@@ -142,6 +145,10 @@
 .active-bar{
   border-top: 4px solid #F5B216;
   background-color: white;
+
+  &.bar-itm:hover{
+    background-color: #ffffff;
+  }
 }
 .active-bar .hidden-box{
   display: block;
@@ -150,9 +157,20 @@
 }
 .active-bar .number,
 .active-bar .text{
-  color: red;
+  // color: red;
 }
 .active-bar .bar-icon{
    transform: rotate(180deg)
 }
-
+.brand-name{
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+.sku{
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+.description{
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}

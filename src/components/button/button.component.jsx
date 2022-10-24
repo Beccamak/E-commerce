@@ -2,7 +2,8 @@ import './button.styles.css';
 
 const BUTTON_TYPES = {
     filled: "fill",
-    inverted: "nofill"
+    inverted: "nofill",
+    filledCard: "fillCard"
 }
 
 const Button = ({buttonType, children, onClickHandler}) => {

@@ -3,15 +3,35 @@
         width: 20%;
         position: relative;
        
-        
-        .main-cat{
+        .main{
             display: flex;
-            flex-direction: column;
-            font-size: 1.6rem;
-            padding: 0.8rem 1.2rem 0.8rem 1.2rem;
-          
+            align-items: center;
+            gap: 8px;
+            
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.05)
+                // background-color: rgba(245, 178, 22, 0.05)
+            }
+            
+            .main-icon{
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+            
+            .main-cat{
+                display: flex;
+                flex-direction: column;
+                font-size: 1.4rem;
+                width: 100%;
+                padding: 0.4rem 0 0.8rem 0.4rem;
+                &:hover{
+                    font-size: 1.42rem;
+                }
+              
+            }
+        
+
         }
-    
         .cat-collections{
             background-color: #fff;
             position: absolute;
@@ -24,7 +44,7 @@
             padding: 1.2rem;
             box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.05);
             border-left: 1px solid #bdbdbd;
-           visibility: hidden;
+        //    visibility: hidden;
            
            .collection{
                width: 33.3%;
@@ -44,14 +64,14 @@
                        margin-bottom: 1.2rem;
                        border-bottom: 1px solid #ddd;
                        text-overflow: ellipsis;
-                       // color: #666;
+                 
                    
                    }
                    
                    .sub-item{
                        font-size: 1rem;
                        line-height: 1.2;
-                       color: #706f6f;
+                       
 
                        &:hover{
                         font-size: 1.4rem;

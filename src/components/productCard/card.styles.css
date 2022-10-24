@@ -33,7 +33,8 @@ img{
     /* height: 70% */
 }
 .product-details{
-    padding: 2rem 0.8rem;
+    padding: 0.4rem 0.8rem;
+    text-overflow: ellipsis;
     font-size: 1.2rem;
 }
 
@@ -63,10 +64,4 @@ img{
     font-size: 1.8rem;
     font-weight: 500;
     
-}
-.card-add-to-cart{
-   /* width: 100%;
-   transform: translateX(15px);
-  display: none;
-  transition: display 1s ease transform 1s ease; */
 }

@@ -1,7 +1,5 @@
 import './price.slider.styles.css';
 import { useState } from 'react';
-import { faDollar, faDollarSign } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const priceValueDefault = {
@@ -75,12 +73,12 @@ const PriceSlider = () => {
     <div class="price-input">
       <div class="field">
         <input type="number" class="input-min" name="min" value={min} onChange={onPriceChange}></input>
-        <FontAwesomeIcon icon={faDollar} className="currency"/>
+
         </div>
         <div class="separator">-</div>
         <div class="field">
         <input type="number" class="input-max" name="max" value={max} onChange={onPriceChange}></input>
-        <FontAwesomeIcon icon={faDollar} className="currency"/>
+     
       </div>
     </div>
     <div class="slider">

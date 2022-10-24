@@ -3,5 +3,7 @@
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    gap: 2.4rem;
+    height: 100rem;
    
 }

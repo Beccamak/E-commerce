@@ -14,8 +14,7 @@ const Home = () => {
   
     return(
          <motion.div initial={{width: 0}} animate={{width: "100%"}} transition={{duration: 0.9}} exit={{width: window.innerWidth}}>    
-         <A />
-         
+
          <MainDisplay />
          <FlashSales />
           <TopCategories />

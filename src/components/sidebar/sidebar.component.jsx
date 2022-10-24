@@ -18,6 +18,7 @@ const Sidebar = () => {
             <h2 className='sidebar-header' >Price</h2>
             <PriceSlider />
             </div>
+            {/*
             <div className='sidebar-section'>
             <h2 className='sidebar-header' >Discount Percentage</h2>
             <div>percentages</div>
@@ -41,7 +42,7 @@ const Sidebar = () => {
             <div className='sidebar-section'>
             <h2 className='sidebar-header'>Free Shipping</h2>
             <div>free</div>
-            </div>
+    </div>*/}
         </div>
     )
 }

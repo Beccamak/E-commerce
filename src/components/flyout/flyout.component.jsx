@@ -6,6 +6,17 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { selectCategories } from '../../store/categoriesReducer/categories.selector';
 import { selectCurrentCategory } from '../../store/products reducer/products.selector';
 import { setCurrentCategory } from '../../store/products reducer/products.action';
+import {ReactComponent as AutomobileIcon} from '../../assets/categories/car.svg';
+import {ReactComponent as BabyProducts} from '../../assets/categories/baby.svg';
+import {ReactComponent as BeautyHealth} from '../../assets/categories/bandaids.svg';
+import {ReactComponent as Computers} from '../../assets/categories/desktop.svg';
+import {ReactComponent as Electronics} from '../../assets/categories/lightning.svg';
+import {ReactComponent as Fashion} from '../../assets/categories/t-shirt.svg';
+import {ReactComponent as Gaming} from '../../assets/categories/game-controller.svg';
+import {ReactComponent as Home} from '../../assets/categories/lamp.svg';
+import {ReactComponent as Phones} from '../../assets/categories/device-mobile.svg';
+import {ReactComponent as Sport} from '../../assets/categories/soccer-ball.svg';
+import {ReactComponent as Supermarket} from '../../assets/categories/storefront.svg';
 
 
 const Flyout = () => {
@@ -16,6 +27,20 @@ const Flyout = () => {
     const currentCategory = useSelector(selectCurrentCategory);
    const categories = useSelector(selectCategories)
     const dispatch = useDispatch();
+    const icons = [
+        <AutomobileIcon className="icon main-icon"/>,
+        <BabyProducts className="icon main-icon"/>,
+        <BeautyHealth className="icon main-icon"/>,
+        <Computers className="icon main-icon"/>,
+        <Electronics className="icon main-icon"/>,
+        <Fashion className="icon main-icon"/>,
+        <Gaming className="icon main-icon"/>,
+        <Home className="icon main-icon"/>,
+        <Phones className="icon main-icon"/>,
+        <Sport className="icon main-icon"/>,
+        <Supermarket className="icon main-icon"/>,
+
+]    
    useEffect(() => {
          setStyle(isHover ? {visibility: "visible"} : {});
          
@@ -80,10 +105,13 @@ const Flyout = () => {
              <div className='categories--flyout'>
                   <Fragment>
                   {
-                    categories.map((categoryObject) => {
+                    categories.map((categoryObject, index) => {
                      return <Fragment>
-                            <Link  to='/' className='main-cat' onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>{categoryObject.MainCategory}</Link>
-                            <div className='cat-collections' onMouseEnter={categoryHoverMouseEnterHandler} onMouseLeave={categoryHoverMouseLeaveHandler} style={style}>
+                     <div className="main">
+                     {icons[index]}
+                     <Link  to='/' className='main-cat' onMouseEnter={mouseEnterHandler} onMouseLeave={mouseLeaveHandler}>{categoryObject.MainCategory}</Link>
+                     </div>
+                            <div className='cat-collections' onMouseEnter={categoryHoverMouseEnterHandler} onMouseLeave={categoryHoverMouseLeaveHandler} >
                             
                             {arr.map((item) => {
                                     
@@ -127,3 +155,5 @@ const Flyout = () => {
   
 
 export default Flyout;  
+
+                                // <div className='cat-collections' onMouseEnter={categoryHoverMouseEnterHandler} onMouseLeave={categoryHoverMouseLeaveHandler} style={style}>

@@ -4,7 +4,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
 
-const Slider = () => {
+const Slider = ({sliderType}) => {
     const [slideIndex, setSlideIndex] = useState(1);
     const imgs = [
             "imgs/img1.jpg",
@@ -34,10 +34,9 @@ const clickDot = (index) => {
     setSlideIndex(index)
 }
     return(
-        <div className='carousel-slider'>
+        <div className={`carousel-slider ${sliderType}`}>
                 {
                         imgs.map((img, index) =>{
-                                console.log("img", img);
                                 return <div className={slideIndex === index + 1 ? "slide active-slide" : "slide"}>
                                 <img src={img}/>
 

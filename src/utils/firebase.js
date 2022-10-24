@@ -93,8 +93,8 @@ export const getCategoriesAndDocuments = async() => {
     const querySnapshot = await getDocs(q);
     // querySnapshot.docs.map((docSnapshot, index) => console.log(index,"index",docSnapshot.data()));
     const categoriesArray = querySnapshot.docs.reduce((acc, doc, index) => {
-        const {MainCategory, subCategoriesList} = doc.data();
-        acc[index] = {"MainCategory" : MainCategory, "subCategoriesList": subCategoriesList};
+        const {MainCategory, icon, subCategoriesList} = doc.data();
+        acc[index] = {"MainCategory" : MainCategory, icon: icon, "subCategoriesList": subCategoriesList};
         return acc;
     }, []); 
     return categoriesArray
